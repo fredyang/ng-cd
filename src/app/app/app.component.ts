@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { map, tap, interval } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,29 +12,21 @@ import { UserService } from '../user.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  constructor(public userService: UserService) {
-    setInterval(() => {
-      this.updateTime();
-    }, 1000);
-  }
+  constructor(public userService: UserService) { }
 
-  myprofile: any;
+
+  myprofile$ : any;
 
   count = 0;
-  now = new Date();
 
-  updateTime() {
-    this.now = new Date();
-  }
+  now$ = interval(1000).pipe(map(_ => new Date()));
+
 
   increment() {
     this.count++;
   }
 
   getMyProfile() {
-    this.userService.getProfile().subscribe((guser) => {
-      this.myprofile = guser;
-      console.log(guser);
-    });
+    this.myprofile$ = this.userService.getProfile();
   }
 }

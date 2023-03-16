@@ -1,9 +1,9 @@
-<h1>ng-cd step 2 use ChangeDetectionStrategy.OnPush</h1>
+<h1>ng-cd step 3 use ChangeDetectionStrategy.OnPush and Observable</h1>
 <p>
  {{count}} <button (click)="increment()">increment</button>
 </p>
 
-<p>clock: {{now | date : 'mediumTime'}}</p>
+<p>clock: {{ now$ | async | date : 'mediumTime'}}</p>
 
 <p>user: {{userService.user.id}} 
   <button (click)="userService.updateUserId()">new user id</button>
@@ -11,4 +11,4 @@
 
 <p><button (click)="getMyProfile()">my profile</button></p>
 
-<img *ngIf="myprofile" src="{{myprofile?.avatar_url}}" alt="">
+<img *ngIf="(myprofile$ | async) as myprofile" src="{{ $any(myprofile).avatar_url}}" alt="">
