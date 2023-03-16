@@ -1,1 +1,12 @@
 /* Add application styles & imports to this file! */
+.box {
+  display: block;
+  margin: 5px;
+  border: 1px solid saddlebrown;
+  padding: 5px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
