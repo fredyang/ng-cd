@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { UserService } from '../user.service';
   host: {
     class: 'box',
   },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   constructor(public userService: UserService) {
