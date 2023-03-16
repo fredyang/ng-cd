@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 export interface User {
   id: number;
@@ -13,6 +14,9 @@ function getId() {
 })
 export class UserService {
 
+  constructor(private http: HttpClient) {
+
+  }
   user: User = {
     id: 1000,
   };
