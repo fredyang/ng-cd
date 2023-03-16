@@ -8,3 +8,7 @@
 <p>user: {{userService.user.id}} 
   <button (click)="userService.updateUserId()">new user id</button>
 </p>
+
+<p><button (click)="getMyProfile()">my profile</button></p>
+
+<img *ngIf="myprofile" src="{{myprofile?.avatar_url}}" alt="">

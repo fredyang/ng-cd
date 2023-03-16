@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   host: {
-    'class': 'box'
-  }
+    class: 'box',
+  },
 })
 export class AppComponent {
- 
   constructor(public userService: UserService) {
     setInterval(() => {
       this.updateTime();
     }, 1000);
-
-    userService.getGitHubUser().subscribe((guser)=> {
-      this.githubUser = guser;
-      console.log(guser);
-    })
   }
 
-  githubUser: any;
+  myprofile: any;
 
   count = 0;
   now = new Date();
@@ -34,5 +27,12 @@ export class AppComponent {
 
   increment() {
     this.count++;
+  }
+
+  getMyProfile() {
+    this.userService.getProfile().subscribe((guser) => {
+      this.myprofile = guser;
+      console.log(guser);
+    });
   }
 }

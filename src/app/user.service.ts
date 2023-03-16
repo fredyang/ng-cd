@@ -33,8 +33,8 @@ export class UserService {
     this.user.id = getId();
   }
 
-  getGitHubUser() {
-    return this.http.get('https://api.github.com/users').pipe(map(x => x[0]));
+  getProfile() {
+    return this.http.get('https://api.github.com/users/fredyang');
   }
 }
 
