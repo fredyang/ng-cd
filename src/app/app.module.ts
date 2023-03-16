@@ -13,6 +13,7 @@ import { UserService } from './user.service';
     UserService
   ],
   declarations: [AppComponent],
-  exports: [AppComponent]
+  exports: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
