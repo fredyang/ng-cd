@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
-// import { UserService } from '../../user.service';
-
-
+import { UserService } from '../user.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-//public userService: UserService
-  constructor() { 
+ 
+  constructor(public userService: UserService) {
     setInterval(() => {
       this.updateTime();
-    }, 1000)
+    }, 1000);
   }
 
   count = 0;
-  now = new Date();  
+  now = new Date();
 
   updateTime() {
     this.now = new Date();
@@ -27,6 +25,4 @@ export class AppComponent {
   increment() {
     this.count++;
   }
-
- 
 }
