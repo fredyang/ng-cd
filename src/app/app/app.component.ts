@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { map, tap, interval } from 'rxjs';
+import { map, interval } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
