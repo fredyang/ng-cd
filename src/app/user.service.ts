@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { first, map } from 'rxjs';
 export interface User {
   id: number;
 }
@@ -15,8 +16,9 @@ function getId() {
 export class UserService {
 
   constructor(private http: HttpClient) {
-   console.log(http);
+   
   }
+
   user: User = {
     id: 1000,
   };
@@ -29,6 +31,10 @@ export class UserService {
 
   updateUserId() {
     this.user.id = getId();
+  }
+
+  getGitHubUser() {
+    return this.http.get('https://api.github.com/users').pipe(map(x => x[0]));
   }
 }
 

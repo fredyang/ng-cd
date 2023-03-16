@@ -16,7 +16,14 @@ export class AppComponent {
     setInterval(() => {
       this.updateTime();
     }, 1000);
+
+    userService.getGitHubUser().subscribe((guser)=> {
+      this.githubUser = guser;
+      console.log(guser);
+    })
   }
+
+  githubUser: any;
 
   count = 0;
   now = new Date();
