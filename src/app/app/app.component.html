@@ -3,7 +3,7 @@
  {{count}} <button (click)="increment()">increment</button>
 </p>
 
-<p>{{now | date : 'mediumTime'}}</p>
+<p>clock: {{now | date : 'mediumTime'}}</p>
 
 <p>user: {{userService.user.id}} 
   <button (click)="userService.updateUserId()">new user id</button>
