@@ -15,7 +15,7 @@ function getId() {
 export class UserService {
 
   constructor(private http: HttpClient) {
-
+   console.log(http);
   }
   user: User = {
     id: 1000,
