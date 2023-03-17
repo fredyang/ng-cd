@@ -12,11 +12,17 @@ import { Api, User } from '../api.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+
   constructor(private api: Api) {}
+  
   users$ = this.api.loadUsers();
+  
   selectedUser: User;
+  
   count = 0;
+  
   now$ = interval(1000).pipe(map((_) => new Date()));
+  
   increment() {
     this.count++;
   }
