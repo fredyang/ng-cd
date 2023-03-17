@@ -19,7 +19,7 @@ export class AppComponent {
 
   count = 0;
 
-  now$ = interval(1000).pipe(map(_ => new Date()));
+
 
 
   increment() {

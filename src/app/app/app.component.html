@@ -2,8 +2,9 @@
 
 <div class="row">
 
+  <app-count></app-count>
 
-  <p class="box">clock: {{ now$ | async | date: 'mediumTime' }}</p>
+<app-clock></app-clock>
 
   <p class="box">
     user id: {{ userService.user.id }}
