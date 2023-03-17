@@ -3,7 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-count',
   templateUrl: './count.component.html',
-  styleUrls: ['./count.component.css']
+  styleUrls: ['./count.component.css'],
+  host: {
+    'class': 'box'
+  }
 })
 export class CountComponent implements OnInit {
 
