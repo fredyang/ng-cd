@@ -1,14 +1,20 @@
 <h1>ng-cd step 3: use ChangeDetectionStrategy.OnPush and Observable</h1>
 
+
+<p>
+  selected user: {{current?.login}}
+</p>
 <div class="row">
   <app-count></app-count>
   <app-clock></app-clock>
   <app-user-select [users]="users$ | async" (select)="select($event)"></app-user-select>
+
+  <app-user-display [user]="current"></app-user-display>
   <!-- 
     
 
 
  
 
-  <app-user-display [user]="current"></app-user-display> -->
+   -->
 </div>

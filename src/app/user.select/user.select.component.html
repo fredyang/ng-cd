@@ -1,6 +1,6 @@
 
 select a user: 
-  <select [(ngModel)]="current" (ngModelChange)="onSelect($event)">
+  <select [(ngModel)]="selected" (ngModelChange)="onSelect($event)">
     <option [ngValue]="user" *ngFor="let user of users">{{user.login}}</option>
   </select>
 
