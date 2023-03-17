@@ -13,15 +13,12 @@ import { User } from '../user.service';
 })
 export class UserDisplayComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   @Input() user: User;
   
-  // myprofile$ : any;
-  // getProfile() {
-  //   this.myprofile$ = this.http.get('https://api.github.com/users/fredyang');
-  // }
+ 
 }

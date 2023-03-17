@@ -16,5 +16,5 @@ export class UserSelectComponent implements OnInit {
 
   @Input() users: any;
 
-  @Output() select = new EventEmitter();
+  @Output() select = new EventEmitter<User>();
 }
