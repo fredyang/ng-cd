@@ -7,11 +7,13 @@ import { CountComponent } from './count/count.component';
 import { ClockComponent } from './clock/clock.component';
 import { UserSelectComponent } from './user.select/user.select.component';
 import { UserDisplayComponent } from './use.display/user.display.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     UserService

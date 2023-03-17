@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { User, UserService } from '../user.service';
+import { User, Api } from '../user.service';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +12,9 @@ import { User, UserService } from '../user.service';
 })
 export class AppComponent {
 
-  constructor(public userService: UserService) { }
+  constructor(public api: Api) { }
 
-  users$ = this.userService.loadUsers();
+  users$ = this.api.loadUsers();
  
   current: User;
 

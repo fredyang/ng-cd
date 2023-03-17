@@ -14,7 +14,14 @@ export class UserSelectComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() users: any;
+  @Input() users: User[];
+
+  current: User;
 
   @Output() select = new EventEmitter<User>();
+
+  onSelect(user: User) {
+    console.log('onSelect', user);
+    this.select.emit(user);
+  }
 }

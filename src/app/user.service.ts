@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, map } from 'rxjs';
+
 
 export interface User {
   login:               string;
@@ -23,37 +23,18 @@ export interface User {
   site_admin:          boolean;
 }
 
-function getId() {
-  return 1000 + Math.trunc(Math.random() * 1000);
-}
-
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class Api {
 
   constructor(private http: HttpClient) {
    
   }
 
   loadUsers() {
-    return this.http.get<User>('https://api.github.com/users');
+    return this.http.get<User[]>('https://api.github.com/users');
   }
-
-  // user: User = {
-  //   id: 1000,
-  // };
-
-  // getNewUser() {
-  //   return {
-  //     id: getId(),
-  //   };
-  // }
-
-  // updateUserId() {
-  //   this.user.id = getId();
-  // }
-
 
 }
 
