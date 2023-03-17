@@ -6,6 +6,9 @@ import { User } from '../api.service';
   templateUrl: './user.select.component.html',
   styleUrls: ['./user.select.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    'class': 'box'
+  }
 })
 export class UserSelectComponent  {
 
