@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-  <app-count [count]="count" (countChange)="count = $event"></app-count>
+  <app-count [(count)]="count"></app-count>
   <app-clock></app-clock>
   <app-user-select [users]="users$ | async" (select)="select($event)"></app-user-select>
 </div>
