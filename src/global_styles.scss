@@ -11,16 +11,20 @@ html, body {
   height: 100%;
 }
 
-.row {
+.row, .flex {
   display: flex;
   flex-wrap: wrap;
  
 
 }
 
-.row   > * {
+.row, .flex   > * {
   flex-grow: 1;
-  border: 1px solid burlywood;
+  
   margin: 5px;
   
+}
+
+.row > * {
+  border: 1px solid burlywood;
 }
