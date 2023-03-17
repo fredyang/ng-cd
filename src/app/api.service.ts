@@ -28,9 +28,7 @@ export interface User {
 })
 export class Api {
 
-  constructor(private http: HttpClient) {
-   
-  }
+  constructor(private http: HttpClient) {}
 
   loadUsers() {
     return this.http.get<User[]>('https://api.github.com/users');

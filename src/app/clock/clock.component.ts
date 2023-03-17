@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { interval, map } from 'rxjs';
 
 @Component({
@@ -10,11 +10,6 @@ import { interval, map } from 'rxjs';
     'class': 'box'
   }
 })
-export class ClockComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class ClockComponent {
   now$ = interval(1000).pipe(map(_ => new Date()));
 }

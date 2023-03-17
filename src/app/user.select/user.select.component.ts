@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../api.service';
 
 @Component({
@@ -11,9 +11,6 @@ import { User } from '../api.service';
   }
 })
 export class UserSelectComponent  {
-
-  constructor() { }
-
 
   @Input() users: User[];
 
