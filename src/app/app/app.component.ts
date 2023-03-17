@@ -18,9 +18,7 @@ export class AppComponent {
  
   count = 0;
   
-  current: User;
+  selectedUser: User;
 
-  select(user: User) {
-    this.current = user;
-  }
+ 
 }

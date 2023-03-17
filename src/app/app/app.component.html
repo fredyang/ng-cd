@@ -7,16 +7,16 @@
     <button (click)="count=0">reset</button>
   </div>
   <div>
-    selected user: {{current?.login}}
+    selected user: {{selectedUser?.login}}
   </div>
 </div>
 
 <div class="row">
-  <app-count [(count)]="count"></app-count>
+  <app-count [count]="count" (countChange)="count = $event"></app-count>
   <app-clock></app-clock>
-  <app-user-select [users]="users$ | async" (select)="select($event)"></app-user-select>
+  <app-user-select [users]="users$ | async" (select)="selectedUser = $event"></app-user-select>
 </div>
 
-<div class="row" *ngIf="current">
-  <app-user-display [user]="current"></app-user-display>
+<div class="row" *ngIf="selectedUser">
+  <app-user-display [user]="selectedUser"></app-user-display>
 </div>
