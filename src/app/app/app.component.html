@@ -1,14 +1,14 @@
 <h1>ng-cd step 1: basic implementation</h1>
 <p>
- {{count}} <button (click)="increment()">increment</button>
+ count: {{count}} <button (click)="increment()">increment</button>
 </p>
 
 <p>clock: {{now | date : 'mediumTime'}}</p>
 
-<p>user: {{userService.user.id}} 
+<p>user id: {{userService.user.id}} 
   <button (click)="userService.updateUserId()">new user id</button>
 </p>
 
-<p><button (click)="getMyProfile()">my profile</button></p>
+<p><button (click)="getMyProfile()">load profile</button></p>
 
 <img *ngIf="myprofile" src="{{myprofile?.avatar_url}}" alt="">
