@@ -6,7 +6,7 @@ import { UserService } from './user.service';
 import { CountComponent } from './count/count.component';
 import { ClockComponent } from './clock/clock.component';
 import { ProfileComponent } from './profile/profile.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './user.select/user.select.component';
 
 @NgModule({
   imports: [

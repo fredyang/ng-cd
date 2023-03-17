@@ -16,9 +16,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
+
   
-  myprofile$ : any;
-  getProfile() {
-    this.myprofile$ = this.http.get('https://api.github.com/users/fredyang');
-  }
+  
+  // myprofile$ : any;
+  // getProfile() {
+  //   this.myprofile$ = this.http.get('https://api.github.com/users/fredyang');
+  // }
 }

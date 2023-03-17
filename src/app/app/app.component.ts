@@ -11,8 +11,8 @@ import { UserService } from '../user.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  constructor(public userService: UserService) { }
 
+  constructor(public userService: UserService) { }
 
   users$ = this.userService.loadUsers();
  
