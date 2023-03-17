@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../user.service';
 
 @Component({
@@ -7,12 +7,14 @@ import { User } from '../user.service';
   styleUrls: ['./user.select.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserComponent implements OnInit {
+export class UserSelectComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Input() users: User[];
+  @Input() users: any;
+
+  @Output() select = new EventEmitter();
 }

@@ -5,7 +5,7 @@
 
   <app-clock></app-clock>
 
-  <app-user-select [users]="users$ | async"></app-user-select>
+  <app-user-select [users]="users$ | async" (select)="select($event)"></app-user-select>
 
-  <app-profile></app-profile>
+  <app-user-display [user]="current"></app-user-display>
 </div>

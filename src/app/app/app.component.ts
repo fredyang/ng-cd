@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { UserService } from '../user.service';
+import { User, UserService } from '../user.service';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +16,9 @@ export class AppComponent {
 
   users$ = this.userService.loadUsers();
  
+  current: User;
+
+  select(user: User) {
+    this.current = user;
+  }
 }

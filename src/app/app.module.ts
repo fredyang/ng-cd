@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 import { CountComponent } from './count/count.component';
 import { ClockComponent } from './clock/clock.component';
-import { ProfileComponent } from './profile/profile.component';
-import { UserComponent } from './user.select/user.select.component';
+import { UserSelectComponent } from './user.select/user.select.component';
+import { UserDisplayComponent } from './use.display/user.display.component';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { UserComponent } from './user.select/user.select.component';
   providers: [
     UserService
   ],
-  declarations: [AppComponent, CountComponent, ClockComponent, ProfileComponent, UserComponent],
+  declarations: [AppComponent, CountComponent, ClockComponent, UserDisplayComponent, UserSelectComponent],
   exports: [AppComponent]
 })
 export class AppModule { }

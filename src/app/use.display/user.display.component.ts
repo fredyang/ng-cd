@@ -1,23 +1,24 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { User } from '../user.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  selector: 'app-user-display',
+  templateUrl: './user.display.component.html',
+  styleUrls: ['./user.display.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'box'
   }
 })
-export class ProfileComponent implements OnInit {
+export class UserDisplayComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  
+  @Input() user: User;
   
   // myprofile$ : any;
   // getProfile() {
