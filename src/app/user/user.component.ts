@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { User } from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -13,4 +14,5 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
+  @Input() users: User[];
 }

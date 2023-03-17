@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { map, interval } from 'rxjs';
 import { UserService } from '../user.service';
 
 @Component({
@@ -15,5 +14,6 @@ export class AppComponent {
   constructor(public userService: UserService) { }
 
 
+  users$ = this.userService.loadUsers();
  
 }
