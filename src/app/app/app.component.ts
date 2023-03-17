@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { interval, map } from 'rxjs';
 import { Api, User } from '../api.service';
 
 @Component({
@@ -8,31 +9,14 @@ import { Api, User } from '../api.service';
   host: {
     class: 'box',
   },
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-
-  constructor(public api: Api) {
-    setInterval(() => {
-      this.updateTime();
-    }, 1000);
-
-    this.api.loadUsers().subscribe((users) => {
-      this.users = users;
-    });
-  }
-
-  users: User[];
-
+  constructor(private api: Api) {}
+  users$ = this.api.loadUsers();
   selectedUser: User;
-
   count = 0;
-  now = new Date();
-
-  updateTime() {
-    this.now = new Date();
-  }
-
+  now$ = interval(1000).pipe(map((_) => new Date()));
   increment() {
     this.count++;
   }

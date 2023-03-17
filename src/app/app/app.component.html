@@ -5,14 +5,14 @@
   <button (click)="count = 0">reset</button>
 </p>
 
-<p>clock: {{ now | date: 'mediumTime' }}</p>
+<p>clock: {{ now$ | async | date: 'mediumTime' }}</p>
 
 <p>selected user: {{ selectedUser?.login }}</p>
 
 <p>
   select a user:
   <select [(ngModel)]="selectedUser">
-    <option [ngValue]="user" *ngFor="let user of users">
+    <option [ngValue]="user" *ngFor="let user of users$ | async">
       {{ user.login }}
     </option>
   </select>
