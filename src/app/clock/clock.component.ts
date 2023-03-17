@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'box'
   }

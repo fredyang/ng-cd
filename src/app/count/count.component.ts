@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-count',
   templateUrl: './count.component.html',
   styleUrls: ['./count.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'box'
   }

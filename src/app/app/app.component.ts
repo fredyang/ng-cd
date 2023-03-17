@@ -15,18 +15,5 @@ export class AppComponent {
   constructor(public userService: UserService) { }
 
 
-  myprofile$ : any;
-
-  count = 0;
-
-
-
-
-  increment() {
-    this.count++;
-  }
-
-  getMyProfile() {
-    this.myprofile$ = this.userService.getProfile();
-  }
+ 
 }
