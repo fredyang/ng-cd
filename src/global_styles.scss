@@ -11,17 +11,17 @@ html, body {
   height: 100%;
 }
 
-.row, .flex {
+
+
+.row, .flex   {
   display: flex;
   flex-wrap: wrap;
+
+  > * {
+    flex-grow: 1;
+    margin: 5px;
+  }
  
-
-}
-
-.row, .flex   > * {
-  flex-grow: 1;
-  
-  margin: 5px;
   
 }
 
