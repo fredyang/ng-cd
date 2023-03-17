@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Api, User } from '../api.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { Api, User } from '../api.service';
   host: {
     class: 'box',
   },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
