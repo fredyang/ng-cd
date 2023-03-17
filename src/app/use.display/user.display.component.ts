@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { User } from '../user.service';
+import { User } from '../api.service';
 
 @Component({
   selector: 'app-user-display',

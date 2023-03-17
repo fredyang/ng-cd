@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { User, Api } from '../user.service';
+import { User, Api } from '../api.service';
 
 @Component({
   selector: 'app-root',

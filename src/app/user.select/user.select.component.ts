@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { User } from '../user.service';
+import { User } from '../api.service';
 
 @Component({
   selector: 'app-user-select',
