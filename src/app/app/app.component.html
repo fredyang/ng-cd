@@ -4,11 +4,8 @@
   count: {{ count }} <button (click)="increment()">increment</button> &nbsp;
   <button (click)="count = 0">reset</button>
 </p>
-
 <p>clock: {{ now | date: 'mediumTime' }}</p>
-
 <p>selected user: {{ selectedUser?.login }}</p>
-
 <p>
   select a user:
   <select [(ngModel)]="selectedUser">
