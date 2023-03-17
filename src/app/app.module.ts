@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app/app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
+import { CountComponent } from './count/count.component';
+import { ClockComponent } from './clock/clock.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
@@ -12,7 +16,7 @@ import { UserService } from './user.service';
   providers: [
     UserService
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, CountComponent, ClockComponent, ProfileComponent, UserComponent],
   exports: [AppComponent]
 })
 export class AppModule { }
