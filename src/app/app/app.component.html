@@ -6,17 +6,7 @@
 
 <app-clock></app-clock>
 
-  <p class="box">
-    user id: {{ userService.user.id }}
-    <button (click)="userService.updateUserId()">new user id</button>
-  </p>
+<app-user></app-user>
 
-  <p class="box">
-    <button (click)="getMyProfile()">load profile</button>
-    <img
-      *ngIf="myprofile$ | async as myprofile"
-      src="{{ $any(myprofile).avatar_url }}"
-      alt=""
-    />
-  </p>
+<app-profile></app-profile>
 </div>
