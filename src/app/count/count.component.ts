@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-count',
@@ -9,16 +9,15 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
     'class': 'box'
   }
 })
-export class CountComponent implements OnInit {
+export class CountComponent  {
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
   @Input() count = 0;
+
+  @Output() countChange = new EventEmitter<number>();
 
   increment() {
     this.count++;
+    this.countChange.emit(this.count);
   }
 }

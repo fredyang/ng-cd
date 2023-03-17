@@ -1,20 +1,23 @@
-<h1>ng-cd step 3: use ChangeDetectionStrategy.OnPush and Observable</h1>
+<h1>ng-cd step 4: split into components</h1>
 
 
-<p>
-  selected user: {{current?.login}}
-</p>
+
 <div class="row">
-  <app-count></app-count>
+  <p class="box">
+    count: {{count}}
+    <button (click)="count=0">reset</button>
+  </p>
+  <p>
+    selected user: {{current?.login}}
+  </p>
+</div>
+
+<div class="row">
+  <app-count [count]="count" (countChange)="count = $event"></app-count>
   <app-clock></app-clock>
   <app-user-select [users]="users$ | async" (select)="select($event)"></app-user-select>
+</div>
 
+<div class="row" *ngIf="current">
   <app-user-display [user]="current"></app-user-display>
-  <!-- 
-    
-
-
- 
-
-   -->
 </div>

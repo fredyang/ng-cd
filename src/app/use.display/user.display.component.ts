@@ -11,12 +11,10 @@ import { User } from '../api.service';
     'class': 'box'
   }
 })
-export class UserDisplayComponent implements OnInit {
+export class UserDisplayComponent  {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+
 
   @Input() user: User;
   

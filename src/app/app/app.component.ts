@@ -16,6 +16,8 @@ export class AppComponent {
 
   users$ = this.api.loadUsers();
  
+  count = 0;
+  
   current: User;
 
   select(user: User) {

@@ -7,12 +7,10 @@ import { User } from '../api.service';
   styleUrls: ['./user.select.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserSelectComponent implements OnInit {
+export class UserSelectComponent  {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
   @Input() users: User[];
 
