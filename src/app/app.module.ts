@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app/app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserService } from './user.service';
+import { Api } from './api.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    UserService
+    Api
   ],
   declarations: [AppComponent],
   exports: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from '../user.service';
+import { Api, User } from '../api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,20 @@ import { UserService } from '../user.service';
   },
 })
 export class AppComponent {
-  constructor(public userService: UserService) {
+
+  constructor(public api: Api) {
     setInterval(() => {
       this.updateTime();
     }, 1000);
+
+    this.api.loadUsers().subscribe((users) => {
+      this.users = users;
+    });
   }
 
-  myprofile: any;
+  users: User[];
+
+  selectedUser: User;
 
   count = 0;
   now = new Date();
@@ -27,12 +34,5 @@ export class AppComponent {
 
   increment() {
     this.count++;
-  }
-
-  getMyProfile() {
-    this.userService.getProfile().subscribe((guser) => {
-      this.myprofile = guser;
-      console.log(guser);
-    });
   }
 }
