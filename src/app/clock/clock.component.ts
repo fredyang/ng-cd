@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from '@angular/core';
-import { interval, map } from 'rxjs';
+
 
 @Component({
   selector: 'app-clock',
