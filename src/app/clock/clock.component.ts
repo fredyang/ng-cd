@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from '@angular/core';
 import { interval, map } from 'rxjs';
 
 @Component({
@@ -11,5 +11,15 @@ import { interval, map } from 'rxjs';
   }
 })
 export class ClockComponent {
-  now$ = interval(1000).pipe(map(_ => new Date()));
+  constructor( cd: ChangeDetectorRef,  ngZone: NgZone) {
+    ngZone.runOutsideAngular(() => {
+      setInterval(() => {
+        this.now = new Date();
+        cd.detectChanges();
+      } , 1000);
+    });
+  }
+
+  now: Date;
+
 }
