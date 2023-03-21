@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from '@angular/core';
-
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  NgZone,
+  OnDestroy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -7,19 +12,23 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from '@
   styleUrls: ['./clock.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    'class': 'box'
-  }
+    class: 'box',
+  },
 })
-export class ClockComponent {
-  constructor( cd: ChangeDetectorRef,  ngZone: NgZone) {
+export class ClockComponent implements OnDestroy {
+  handle: number;
+  constructor(cd: ChangeDetectorRef, ngZone: NgZone) {
     ngZone.runOutsideAngular(() => {
-      setInterval(() => {
+      this.handle = setInterval(() => {
         this.now = new Date();
         cd.detectChanges();
-      } , 1000);
+      }, 1000);
     });
+  }
+  
+  ngOnDestroy(): void {
+    clearInterval(this.handle);
   }
 
   now: Date;
-
 }
